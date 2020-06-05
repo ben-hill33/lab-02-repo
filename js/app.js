@@ -23,6 +23,8 @@ HornImage.prototype.render = function () {
 
 }
 
+
+
 HornImage.readJson = () => {
   const ajaxSettings = {
     method: 'get',
