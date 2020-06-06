@@ -1,0 +1,31 @@
+@media( min-width: 960px ) {
+  body {
+    background-color: red;
+
+  }
+  section {
+    float: left;
+    margin: 12px;
+  }
+  
+  div {
+    float:left;
+    margin: 2em;
+  }
+}
+section {
+  display:table;
+}
+
+header {
+  height: 125px;
+  /* line-height: 125px; */
+  text-align: center;
+}
+h1 {
+  line-height: 30px;
+}
+
+body {
+
+}
