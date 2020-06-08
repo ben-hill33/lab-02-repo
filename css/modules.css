@@ -1,16 +1,1 @@
-#photo-template{
-
-}
-
-
-section {
-  float: left;
-  /* max-height: 210px; */
-  /* max-height: fit-content; */
-}
-
-section img {
-  max-height: 210px;
-  max-width: 200px;
-}
 
