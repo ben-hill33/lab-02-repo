@@ -3,7 +3,6 @@
 let globalCache = [];
 let allKeywords = [];
 // let pageChoice = 'Page1';
-let dataBaseCache = 'data/page-2.json';
 
 // Constructor function
 function HornImage(horns) {
@@ -12,7 +11,6 @@ function HornImage(horns) {
     this.description = horns.description;
     this.keyword = horns.keyword;
     this.horns = horns.horns;
-
 
     globalCache.push(this);
     addKeyWord(horns.keyword);
@@ -47,25 +45,6 @@ function addDropDownOptions() {
     })
 }
 
-// $(document).ready(function () {
-//     console.log('ready for stuff!');
-//     // if (page === 'Page1') {
-//     //     dataBaseCache = 'data/page-1.json';
-//     // } else {
-//     //     dataBaseCache = 'data/page-2.json';
-//     // }
-//     $.ajax('data/page-1.json')
-//         .then(data => {
-//             data.forEach(horns => {
-//                 new HornImage(horns);
-//             });
-//             globalCache.forEach(item => {
-//                 item.render();
-//             });
-//             addDropDownOptions();
-//         });
-// });
-
 // Renders using mustache.js
 function render(array) {
     array.forEach(horns => {
@@ -79,45 +58,43 @@ function render(array) {
 function getData(page) {
     globalCache = [];
     allKeywords = [];
-$.ajax(`data/${page}.json`, {
-    method: 'get',// method: 'get' doesn't need to be deffered, it goes straight to success
-    dataType: 'json'
-})
-.then(data => {
-    console.log('this is data', data);
-    data.forEach(horns => {
-        console.log('this is horns', horns);
-        new HornImage(horns);
-    });
-    console.log('this is global cache', globalCache);
-    // globalCache.forEach(item => {
-    //     item.render();
-    // });
-    console.log('this is all key words array', allKeywords);
-    render(globalCache);
-    addDropDownOptions();
-    $('#filterOptions').on('change', function() {
-        $('section').hide();
-        let keyword = this.value
-        // console.log('this is the value', this.value);
-        let tempArray = $('#target').children();
-        console.log('temp array', tempArray);
-        tempArray.forEach(element => {
-            console.log('this is the element', element);
-        })
-        $('#target').each((element, index) => {
-            // console.log('this is the value of keyword', keyword);
-            // console.log('this is each', this.value);
-            // console.log(this);
-            if (keyword === this.value) {
-                this.show();console.log('in the if statement')
-            };
+    $.ajax(`data/${page}.json`, {
+        method: 'get',// method: 'get' doesn't need to be deffered, it goes straight to success
+        dataType: 'json'
+    })
+        .then(data => {
+            console.log('this is data', data);
+            data.forEach(horns => {
+                console.log('this is horns', horns);
+                new HornImage(horns);
+            });
+            console.log('this is global cache', globalCache);
+            // globalCache.forEach(item => {
+            //     item.render();
+            // });
+            console.log('this is all key words array', allKeywords);
+            render(globalCache);
+            addDropDownOptions();
+            $('#filterOptions').on('change', function () {
+                //this.value is the value of filterOption after change.
+                // get an array of elements that have class show ie all our divs.
+                let array = $('.show').get();
+                // itterate over array
+                array.forEach(ele => {
+                    //remove display style for each element.
+                    ele.style.display = '';
+                    // ele.attributes['data-keyword'].value is the value of the data-keyword attribute
+                    // for each element compare the data-keyword attribute to this.value
+                    if (ele.attributes['data-keyword'].value !== this.value) {
+                        //match change display style to none. BOOM!
+                        ele.style.display = 'none';
+                    }
+                });
+            });
         });
-    });
-});
 }
 
-$('#pageSelect').on('change', function() {
+$('#pageSelect').on('change', function () {
     let pageValue = $('#pageSelect').children('option:selected').val();
     console.log(pageValue);
     $('#target').html('');
@@ -127,7 +104,7 @@ $('#pageSelect').on('change', function() {
 
 })
 
-getData('page-1')
+getData('page-1');
 // HornImage.readJson = () => {
     // if (page === 'Page1') {
     //     dataBaseCache = 'data/page-1.json';
