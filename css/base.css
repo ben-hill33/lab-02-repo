@@ -12,3 +12,30 @@ html {
 #photo-template {
     display: none;
 }
+
+h1 {
+    font-family: 'Arial', cursive;
+    font-size: 30px;
+    text-align: center;
+    color: black;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    margin: 10px;
+    background-color: grey;
+    color: white;
+    font-size: 18px;
+    margin: 0;
+    font-weight: 800;
+}
+
+p {
+    width: 10em;
+    word-wrap: break-word;
+    text-align: center;
+    padding: 0px;
+    margin: auto;
+}

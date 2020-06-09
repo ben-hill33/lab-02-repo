@@ -1,60 +1,49 @@
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     width: 100%;
 }
 
+/* section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    saving and pushing to production branch
+} */
+
 section {
-    max-height: 210px;
-    padding: .1rem;
-    border: solid black 1px;
-    word-wrap: break-word;
-    background-color: burlywood;
-    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    background-color: saddlebrown;
+    width: 50%;
+    margin: 20px auto;
 }
 
 section img {
     max-height: 150px;
     /* margin: 1em; */
-    border: solid red 1px;
     margin-top: 1px;
     max-width: 300px;
+    height: 75%;
     margin: auto;
+    object-fit: cover;
 }
 
 select {
     clear: both;
     width: 10rem;
-    width: 50%;
+    width: 15%;
     margin: 0 auto;
-}
-
-h1 {
-    font-family: 'Arial', cursive;
-    font-size: 30px;
-    text-align: center;
-    color: black;
-}
-
-h2 {
-    text-align: center;
-    padding-top: 5px;
-    padding-bottom: 2px;
-    margin: 10px;
-}
-
-p {
-    width: 10em;
-    word-wrap: break-word;
-    text-align: center;
-    padding: 0px;
-    margin: auto;
+    margin: 5px;
 }
 
 footer {
-    margin-top: 25px;
-    clear: both;
+    margin-top: 250px;
     padding: 10px;
     font-size: 21px;
     margin: auto;
@@ -62,41 +51,66 @@ footer {
 }
 
 header {
-    /* align-content: center; */
-    /* margin: 0 auto; */
     text-align: center;
 }
+
 
 
 /* On Desktop, float the divs in the section and center them */
 
 @media(min-width: 960px) {
     body {
-        background-color: rgb(87, 87, 121);
+        background-color: burlywood;
     }
     select {
         width: 10rem;
-        width: 10%;
+        width: 25%;
         margin: auto;
+        margin: 5px;
     }
-    section {
+
+     /*
+      section {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        margin: auto;
-        width: 30%;
-    }
-    section:after {
+         margin: auto;
+        width: 30%; 
+    } 
+
+        section:after {
         content: "";
         display: table;
         clear: both;
+    } */
+
+    section {
+        display: flex;
+        flex-direction: row;
+        align-items: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 660px;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: antiquewhite;
+        margin: auto;
+        width: 30%;
+        margin-top: 50px;
+        height: 360px;
+
     }
     section img {
         margin-left: auto;
         margin-right: auto;
-        width: 55%;
-        /* height: 85%; */
+        /* width: 55%; */
+        height: 85%;
         display: block;
         margin-top: 10px;
+        object-fit: cover;
     }
 }
