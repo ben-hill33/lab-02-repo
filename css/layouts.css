@@ -77,7 +77,6 @@ header {
          margin: auto;
         width: 30%; 
     } 
-
         section:after {
         content: "";
         display: table;

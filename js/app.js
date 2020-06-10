@@ -2,7 +2,6 @@
 
 let globalCache = [];
 let allKeywords = [];
-// let pageChoice = 'Page1';
 
 // Constructor function
 function HornImage(horns) {
@@ -69,9 +68,6 @@ function getData(page) {
                 new HornImage(horns);
             });
             console.log('this is global cache', globalCache);
-            // globalCache.forEach(item => {
-            //     item.render();
-            // });
             console.log('this is all key words array', allKeywords);
             render(globalCache);
             addDropDownOptions();
@@ -101,16 +97,6 @@ $('#pageSelect').on('change', function () {
     $('#filterOptions').html('');
     getData(pageValue)
 
-
 })
 
 getData('page-1');
-// HornImage.readJson = () => {
-    // if (page === 'Page1') {
-    //     dataBaseCache = 'data/page-1.json';
-    // } else {
-    //     dataBaseCache = 'data/page-2.json';
-    // }
-
-// }  
-//   $(() => HornImage.readJson());//anonymous function
